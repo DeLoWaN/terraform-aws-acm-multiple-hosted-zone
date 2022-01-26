@@ -1,7 +1,9 @@
 terraform {
   required_providers {
-    aws = "~> 3.0"
+    aws = {
+      version = "~> 3.0"
+      configuration_aliases = [ aws.route53, aws.acm ]
+    }
   }
-
-  required_version = ">= 0.12.6"
+  required_version = ">= 0.15"
 }
